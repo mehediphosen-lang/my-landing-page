@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your App Landing Page</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#222}
+.hero{background:#00c915;padding:24px 18px 28px;text-align:center;color:#fff}
+.logo{font-family:Georgia,serif;font-size:42px;font-weight:700;margin:8px 0 28px}
+.notice{max-width:650px;margin:0 auto 24px;background:#00b814;border-radius:35px;padding:14px 18px;font-size:20px;font-weight:700}
+.sub{font-size:20px;font-weight:700;line-height:1.5}
+.small{font-size:17px;margin-top:14px;font-weight:700}
+.gallery{max-width:650px;margin:28px auto 16px;padding:0 15px;text-align:center}
+.gallery img{width:100%;max-height:280px;object-fit:contain;border-radius:12px}
+.hint{color:#888;font-size:16px;margin:12px 0 25px}
+.buttons{max-width:650px;margin:auto;padding:0 16px}
+.btn{display:flex;align-items:center;justify-content:space-between;
+     color:#fff;text-decoration:none;border-radius:28px;padding:17px 20px;
+     margin:16px 0;box-shadow:0 5px 0 rgba(0,0,0,.16);font-weight:800}
+.btn .left{display:flex;align-items:center;gap:14px}
+.icon{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.2);
+      display:flex;align-items:center;justify-content:center;font-size:28px}
+.badge{display:block;font-size:13px;letter-spacing:.4px;margin-bottom:4px}
+.label{font-size:24px}
+.arrow{font-size:30px}
+.orange{background:#f45112}.blue{background:#159bd6}.green{background:#00b83f}
+.count{max-width:650px;margin:30px auto;padding:15px;border:2px solid #f1d98b;
+      border-radius:22px;color:#9a6417;font-weight:700;text-align:center}
+.disclaimer{max-width:650px;margin:8px auto 30px;padding:0 18px;color:#666;
+            font-size:13px;line-height:1.6;text-align:center}
+@media(max-width:480px){
+ .logo{font-size:34px}.notice{font-size:17px}.sub{font-size:17px}
+ .label{font-size:20px}.btn{padding:14px 15px}.icon{width:46px;height:46px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="logo">YOUR BRAND</div>
+  <div class="notice">📢 Join our community and get updates quickly 🚀</div>
+  <div class="sub">📲 App / Offer Link is available below</div>
+  <div class="small">Please read the information before joining.</div>
+</section>
+
+<div class="gallery">
+  <!-- Replace this image URL with your own screenshot/banner if you have one -->
+  <img src="https://placehold.co/900x380/eeeeee/555555?text=YOUR+APP+SCREENSHOTS" alt="App screenshots">
+  <div class="hint">↔ Swipe left or right to see more</div>
+</div>
+
+<div class="buttons">
+
+  <!-- Replace href values with your real links -->
+  <a class="btn orange" href="YOUR_AFFILIATE_LINK" target="_blank" rel="noopener noreferrer">
+    <div class="left">
+      <div class="icon">⬇️</div>
+      <div>
+        <span class="badge">DIRECT APP LINK</span>
+        <span class="label">REGISTER / OPEN APP</span>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <a class="btn blue" href="YOUR_TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">
+    <div class="left">
+      <div class="icon">✈️</div>
+      <div>
+        <span class="badge">INSTANT JOIN</span>
+        <span class="label">JOIN TELEGRAM CHANNEL</span>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <a class="btn green" href="YOUR_WHATSAPP_LINK" target="_blank" rel="noopener noreferrer">
+    <div class="left">
+      <div class="icon">💬</div>
+      <div>
+        <span class="badge">FREE ACCESS</span>
+        <span class="label">JOIN WHATSAPP CHANNEL</span>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+</div>
+
+<div class="count">
+  ⏳ You will be redirected to Telegram in <span id="seconds">7</span> seconds.
+</div>
+
+<div class="disclaimer">
+  Disclaimer: This page does not guarantee earnings or approval. Results, availability,
+  rewards and terms depend on the third-party service. Please verify the service and its
+  terms yourself before registering.
+</div>
+
+<script>
+// Replace this with your Telegram link.
+const telegramLink = "YOUR_TELEGRAM_LINK";
+let seconds = 7;
+const counter = document.getElementById("seconds");
+
+const timer = setInterval(() => {
+  seconds--;
+  counter.textContent = seconds;
+  if (seconds <= 0) {
+    clearInterval(timer);
+    if (telegramLink && !telegramLink.startsWith("YOUR_")) {
+      window.location.href = telegramLink;
+    }
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
